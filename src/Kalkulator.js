@@ -11,29 +11,33 @@ import {
 import useStore from "./store";
 
 function KalkulatorJs() {
+  //get formdata and set formdata from store
   const { formData, setFormData } = useStore();
+  //initial set state for hasil
   const [hasil, setHasil] = useState(0);
 
+  //handle change form
   const handleChange = (e) => {
     setFormData({
       [e.target.name]: e.target.value,
     });
   };
 
+  //handle submit form
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //initial variable alas and tinggi
     let alas = parseInt(formData.alas);
     let tinggi = parseInt(formData.tinggi);
     let hasil = (alas * tinggi) / 2;
+    //set hasil to state
     setHasil(hasil);
-
-    // Convert form data to JSON
   };
 
   return (
     <Box sx={{ display: "flex", height: "100vh" }}>
       <CssBaseline />
-
       <Paper>
         <Box
           component="main"

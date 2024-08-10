@@ -15,14 +15,17 @@ import {
 import useStore from "./store";
 
 function BiodataForm() {
+  //get formdata, set formdata and reset formdata from store
   const { formData, setFormData, resetFormData } = useStore();
 
+  //handle change form
   const handleChange = (e) => {
     setFormData({
       [e.target.name]: e.target.value,
     });
   };
 
+  //handle submit form
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -36,7 +39,9 @@ function BiodataForm() {
     alert("Data saved successfully!");
   };
 
+  //handle cancel form
   const handleCancel = () => {
+    //reset form data
     resetFormData();
   };
 
