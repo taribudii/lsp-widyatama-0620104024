@@ -188,7 +188,7 @@ function BiodataForm() {
                 color="primary"
                 sx={{ mr: 1 }}
               >
-                Submit
+                Send
               </Button>
               <Button
                 variant="outlined"
